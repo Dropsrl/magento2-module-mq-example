@@ -27,6 +27,6 @@ class ProductSaveAfter implements ObserverInterface
     public function execute(
         \Magento\Framework\Event\Observer $observer
     ) {
-        $this->publisher->publish('product.updates', $observer->getProduct()->getId());
+        $this->publisher->publish('product.updates', "Saving product " . $observer->getProduct()->getId(), $observer->getProduct()->getId());
     }
 }
